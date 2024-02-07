@@ -1,0 +1,34 @@
+# // Auto-generated , DO NOT EDIT
+specVersion: 1.0.0
+version: 0.0.1
+name: neutron-starter
+description: >-
+  This project can be use as a starting point for developing your Cosmos neutron
+  based SubQuery project
+runner:
+  node:
+    name: '@subql/node-cosmos'
+    version: '>=3.0.0'
+  query:
+    name: '@subql/query'
+    version: '*'
+schema:
+  file: ./schema.graphql
+network:
+  chainId: neutron-1
+  endpoint:
+    - https://rpc-kralum.neutron-1.neutron.org
+    - https://rpc-neutron.whispernode.com
+dataSources:
+  - kind: cosmos/Runtime
+    startBlock: 6382864
+    mapping:
+      file: ./dist/index.js
+      handlers:
+        - handler: handleSendMsg
+          kind: cosmos/MessageHandler
+          filter:
+            type: /cosmos.bank.v1beta1.MsgSend
+            values:
+              toAddress: >-
+                neutron130w93vdsq9k35d0s90wlkd2r3309ps786cs9akgaxgv3s03x3asqzhudfn

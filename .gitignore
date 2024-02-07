@@ -1,0 +1,6 @@
+packages/indexer/node_modules/**/*
+node_modules/**/*
+.data/**/*
+.DS_Store
+src/types/**/*
+dist/**/*
